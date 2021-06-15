@@ -13,10 +13,10 @@ const transformUnion = ({
   resolve: (source, _, context) => {
     const resolvedField = source[fieldName] || source[`${field.name}__typename_${field.type.name}`];
 
-    if (resolvedField && resolvedField.id) {
+    if (resolvedField && resolvedField?.id) {
       const gatsbyNode = context.nodeModel.getNodeById({
-        id: resolvedField.id,
-        type: resolvedField.type
+        id: resolvedField?.id,
+        type: resolvedField?.type
       });
 
       if (gatsbyNode) {
