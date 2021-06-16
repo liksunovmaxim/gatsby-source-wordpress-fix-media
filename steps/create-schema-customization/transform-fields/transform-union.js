@@ -50,8 +50,8 @@ const transformListOfUnions = ({
         // @todo use our list of Gatsby node types to do a more performant check
         // on wether this is a Gatsby node or not.
         const node = context.nodeModel.getNodeById({
-          id: item.id,
-          type: (0, _helpers.buildTypeName)(item.__typename)
+          id: item?.id,
+          type: (0, _helpers.buildTypeName)(item?.__typename)
         });
 
         if (node) {
